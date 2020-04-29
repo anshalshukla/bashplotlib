@@ -76,11 +76,11 @@ def abbreviate(labels, rfill=' '):
     return abbrev
 
 
-def box_text(text, width, offset=0):
+def box_text(text, width, offset=1, length=1):
     """
     Return text inside an ascii textbox
     """
-    box = " " * offset + "-" * (width+2) + "\n"
-    box += " " * offset + "|" + text.center(width) + "|" + "\n"
-    box += " " * offset + "-" * (width+2)
+    box = "+" * offset + "-" * (width) + "+" * offset + "\n"
+    box += "" * offset + "|" + text.center(width) + "|" + "\n"
+    box += "+" * offset + "-" * (width) + "+" * offset 
     return box
